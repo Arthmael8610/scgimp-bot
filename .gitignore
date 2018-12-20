@@ -31,3 +31,11 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+/StarCitizen.Gimp.Core/Configuration/appsettings.json
+/StarCitizen.Gimp.Core/Configuration/appsettings.production.json
+/StarCitizen.Gimp.Web/appsettings.Development.json
+/StarCitizen.Gimp.Web/appsettings.Production.json
+/StarCitizen.Gimp.WebJobs.SpectrumFeed/appsettings.json
+/StarCitizen.Gimp.WebJobs.RssFeed/appsettings.json
+/StarCitizen.Gimp.WebJobs.StoreFeed/appsettings.json
+/StarCitizen.Gimp.Web/appsettings.json
