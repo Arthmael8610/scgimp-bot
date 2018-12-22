@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.0-beta5" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.13" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.2" />
   </ItemGroup>
 
