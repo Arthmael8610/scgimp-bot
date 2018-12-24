@@ -778,7 +778,7 @@ namespace StarCitizen.Gimp.Web.Controllers
 
                 using (HttpClient client = new HttpClient())
                 {
-                    string content = "Greetings Citizen,\\n\\nYour Discord server has successfully been integrated with the Star Citizen Gimp bot.\\n\\nYou will now receive notifications in this channel from the bot.\\n\\nThis is a free sevice, but it does cost something to host the services on the cloud (about $80 USD per month), as such any donations https://scgimp.com#donations are greatly appreciated.\\n\\nYou can go to http://scgimp.com/home/deletediscordwebhook to deregister your Discord Webhook at any time.\\n\\nShould the gimp misbehave and go into a spam loop please go report it at http://scgimp.com/home/badgimp to stop the bot and notify an administrator.";
+                    string content = "Greetings Citizen,\\n\\nYour Discord server has successfully been integrated with the Star Citizen Gimp bot.\\n\\nYou will now receive notifications in this channel from the bot.\\n\\nThis is a free sevice, but it does cost something to host the services on the cloud (about $80 USD per month), as such any donations https://scgimp.citizenwarfare.com#donations are greatly appreciated.\\n\\nYou can go to http://scgimp.citizenwarfare.com/home/deletediscordwebhook to deregister your Discord Webhook at any time.\\n\\nShould the gimp misbehave and go into a spam loop please go report it at http://scgimp.citizenwarfare.com/home/badgimp to stop the bot and notify an administrator.";
                     string jsonPayload = $"{{ \"content\": \"{content}\" }}";
 
                     using (HttpResponseMessage response = await client.PostAsync(postUrl, new StringContent(jsonPayload, Encoding.UTF8, "application/json")))
@@ -894,8 +894,8 @@ namespace StarCitizen.Gimp.Web.Controllers
             builder.AppendLine("<div>");
             builder.AppendLine("<p>Greetings Citizen,</p>");
             builder.AppendLine("<p>You have been subscribed to the Star Citizen Gimp bot notification service.</p>");
-            builder.AppendLine("<p>This is a free sevice, but it does cost something to host the services on the cloud (about $80 USD per month), as such any <a href=\"https://scgimp.com#donations\">donations</a> are greatly appreciated.</p>");
-            builder.AppendLine("<p>If you wish to unsubscribe from these notifications at a later date you can <a href=\"https://scgimp.com/home/unsubscribe\">unsubscribe</a> by clicking <a href=\"https://scgimp.com/home/unsubscribe\">here</a>.</p>");
+            builder.AppendLine("<p>This is a free sevice, but it does cost something to host the services on the cloud (about $80 USD per month), as such any <a href=\"https://scgimp.citizenwarfare.com#donations\">donations</a> are greatly appreciated.</p>");
+            builder.AppendLine("<p>If you wish to unsubscribe from these notifications at a later date you can <a href=\"https://scgimp.citizenwarfare.com/home/unsubscribe\">unsubscribe</a> by clicking <a href=\"https://scgimp.citizenwarfare.com/home/unsubscribe\">here</a>.</p>");
             builder.AppendLine("<p>Happy gaming and see you in the verse!</p>");
             builder.AppendLine("</div>");
 

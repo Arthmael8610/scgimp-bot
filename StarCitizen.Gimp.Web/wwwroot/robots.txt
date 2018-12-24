@@ -4,4 +4,4 @@ Disallow: /home/error/
 Disallow: /test/
 Disallow: /home/index/
 Disallow: /home/privacy/
-Sitemap: https://scgimp.com/sitemap.xml
+Sitemap: https://scgimp.citizenwarfare.com/sitemap.xml

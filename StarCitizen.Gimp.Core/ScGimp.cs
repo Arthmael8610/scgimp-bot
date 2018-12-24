@@ -1630,7 +1630,7 @@ namespace StarCitizen.Gimp.Core
             }
 
             //builder.AppendLine();
-            //builder.AppendLine("Report a bad gimp <https://scgimp.com/Home/BadGimp>.");
+            //builder.AppendLine("Report a bad gimp <https://scgimp.citizenwarfare.com/Home/BadGimp>.");
 
             // If everything was filtered out then do not notify.
             if (count == 0)
@@ -1724,7 +1724,7 @@ namespace StarCitizen.Gimp.Core
             builder.AppendLine("<br />");
             builder.AppendLine("<p>If you like this bot please go <a href=\"https://robertsspaceindustries.com/community/deep-space-radar/1679-Star-Citizen-Gimp\">vote</a> for it on the <a href=\"https://robertsspaceindustries.com/community/deep-space-radar/1679-Star-Citizen-Gimp\">RSI website</a>.</p>");
 
-            builder.AppendLine("<p><a href=\"https://scgimp.com#donations\">Donate</a>&nbsp;|&nbsp;<a href=\"https://scgimp.com/Home/BadGimp\">Report a bad gimp</a>&nbsp;|&nbsp;<a href=\"https://scgimp.com/home/unsubscribe\">Unsubscribe</a></p>");
+            builder.AppendLine("<p><a href=\"https://scgimp.citizenwarfare.com#donations\">Donate</a>&nbsp;|&nbsp;<a href=\"https://scgimp.citizenwarfare.com/Home/BadGimp\">Report a bad gimp</a>&nbsp;|&nbsp;<a href=\"https://scgimp.citizenwarfare.com/home/unsubscribe\">Unsubscribe</a></p>");
 
             builder.AppendLine("</div>");
 

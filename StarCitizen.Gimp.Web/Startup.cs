@@ -29,7 +29,7 @@ namespace StarCitizen.Gimp.Web
             IConfigurationBuilder configBuilder = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", true, reloadOnChange: true)
-                    .AddJsonFile($"appsettings.{HostingEnvironment.EnvironmentName}.json", true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.Development.json", true, reloadOnChange: true)
                     .AddEnvironmentVariables();
 
             if (HostingEnvironment.IsDevelopment())
@@ -121,9 +121,13 @@ namespace StarCitizen.Gimp.Web
                 app.UseHsts();
 
                 // https://theludditedeveloper.wordpress.com/2016/01/06/iis-url-rewrite-gotcha-2/
-                string iisUrlRewriteConfig = "<rewrite><rules>" +
-                    "<rule name=\"Redirect requests to default azure websites domain to custom domain\" stopProcessing=\"true\"><match url=\"(.*)\" ignoreCase=\"true\" /><conditions logicalGrouping=\"MatchAny\"><add input=\"{HTTP_HOST}\" pattern=\"^scgimp\\.azurewebsites\\.net$\" /></conditions><action type=\"Redirect\" url=\"https://scgimp.com/{R:0}\" appendQueryString=\"true\" redirectType=\"Permanent\" /></rule>" +
-                    "<rule name=\"Redirect www to root\" stopProcessing=\"true\"><match url=\"(.*)\" ignoreCase=\"true\" /><conditions logicalGrouping=\"MatchAll\"><add input=\"{HTTP_HOST}\" pattern=\"^www\\.(.+)$\" /></conditions><action type=\"Redirect\" url=\"https://{C:1}/{R:0}\" appendQueryString=\"true\" redirectType=\"Permanent\" /></rule>" +
+                /*string iisUrlRewriteConfig = "<rewrite><rules>" +
+                    "<rule name=\"Redirect requests to default azure websites domain to custom domain\" stopProcessing=\"true\">" +
+                    "<match url=\"(.*)\" ignoreCase=\"true\" /><conditions logicalGrouping=\"MatchAny\">" +
+                    "<add input=\"{HTTP_HOST}\" pattern=\"^scgimp\\.azurewebsites\\.com$\" /></conditions><action type=\"Redirect\" url=\"https://scgimp.citizenwarfare.com/{R:0}\" appendQueryString=\"true\" redirectType=\"Permanent\" /></rule>" +
+                    "<rule name=\"Redirect www to root\" stopProcessing=\"true\"><match url=\"(.*)\" ignoreCase=\"true\" />" +
+                    "<conditions logicalGrouping=\"MatchAll\"><add input=\"{HTTP_HOST}\" pattern=\"^www\\.(.+)$\" />" +
+                    "</conditions><action type=\"Redirect\" url=\"https://{C:1}/{R:0}\" appendQueryString=\"true\" redirectType=\"Permanent\" /></rule>" +
                     "</rules></rewrite>";
 
                 using (TextReader iisUrlRewriteTextReader = new StringReader(iisUrlRewriteConfig))
@@ -133,7 +137,7 @@ namespace StarCitizen.Gimp.Web
                         .AddIISUrlRewrite(iisUrlRewriteTextReader);
 
                     app.UseRewriter(options);
-                }
+                }*/
             }
 
             //app.UseHttpsRedirection(); // Already set it up above with the other rewrite options.
