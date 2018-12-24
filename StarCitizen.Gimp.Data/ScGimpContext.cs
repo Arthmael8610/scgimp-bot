@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using MySql.Data.EntityFrameworkCore.Infraestructure;
 
 namespace StarCitizen.Gimp.Data
 {
@@ -65,16 +66,16 @@ namespace StarCitizen.Gimp.Data
             _configured = true;
         }
 
-        public static void GetSqlServerOptions(SqlServerDbContextOptionsBuilder builder)
+        public static void GetSqlServerOptions(MySQLDbContextOptionsBuilder builder)
         {
             builder
-                .MigrationsAssembly("StarCitizen.Gimp.Web")
-                .EnableRetryOnFailure
-                (
-                    5,
-                    TimeSpan.FromSeconds(30d),
-                    null
-                );
+                .MigrationsAssembly("StarCitizen.Gimp.Web");
+            /*.EnableRetryOnFailure
+            (
+                5,
+                TimeSpan.FromSeconds(30d),
+                null
+            );*/
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace StarCitizen.Gimp.Data
                 IConfigurationRoot configuration = configBuilder
                     .Build();
 
-                optionsBuilder.UseSqlServer
+                optionsBuilder.UseMySQL
                 (
                     configuration["ConnectionStrings:ScGimpContext"], 
                     GetSqlServerOptions
@@ -115,8 +116,8 @@ namespace StarCitizen.Gimp.Data
 
         private static DbContextOptions<ScGimpContext> GetSqlServerOptions(string connectionString)
         {
-            return SqlServerDbContextOptionsExtensions
-                .UseSqlServer
+            return MySQLDbContextOptionsExtensions
+                .UseMySQL
                 (
                     new DbContextOptionsBuilder<ScGimpContext>(), 
                     connectionString, 

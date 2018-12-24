@@ -99,7 +99,7 @@ namespace StarCitizen.Gimp.Web
 
             services.AddDbContext<ScGimpContext>
             (
-                options => options.UseSqlServer
+                options => options.UseMySQL
                 (
                     config.ScGimpContext,
                     ScGimpContext.GetSqlServerOptions
